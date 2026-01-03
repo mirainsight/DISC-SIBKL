@@ -829,19 +829,19 @@ question_contexts = [
     {
         "situation": "Someone in your group is struggling.",
         "actions": {
-            "CONSCIENTIOUS": "I ensure things are done properly and responsibly.",
-            "COMPANIONABLE": "I connect with them and offer encouragement.",
-            "KIND": "I show care and understanding.",
-            "SELF-RELIANT": "I believe people should solve problems independently."
+            "CONSCIENTIOUS": "I should focus on what needs to be done and make sure responsibilities don't fall through.",
+            "COMPANIONABLE": "I should check in, talk with them, and stay connected rather than leave them alone.",
+            "KIND": "This isn't the time to push — I should be patient and give them space to cope.",
+            "SELF-RELIANT": "They may need to work through this on their own to really grow."
         }
     },
     {
-        "situation": "Plans suddenly change at the last minute.",
+        "situation": "You order something you want, but you're told it's sold out.",
         "actions": {
-            "AGREEABLE": "I accept the change without much issue.",
-            "SELF-CONTROLLED": "I remain calm and composed.",
-            "PLAYFUL": "I treat it lightly and make it fun.",
-            "PERSISTENT": "I push to make the original plan work."
+            "AGREEABLE": "It's okay — I can adapt and choose something else.",
+            "SELF-CONTROLLED": "I'll pause, keep my reaction in check, and respond calmly.",
+            "PLAYFUL": "Maybe this change could be fun — I'll try something different.",
+            "PERSISTENT": "I'd rather find a way to get what I originally planned for."
         }
     },
     {
@@ -865,10 +865,10 @@ question_contexts = [
     {
         "situation": "A disagreement arises in a group.",
         "actions": {
-            "RESPECTFUL": "I maintain respect and follow rules.",
-            "GOOD MIXER": "I bring people together.",
-            "AGGRESSIVE": "I push my point strongly.",
-            "GENTLE": "I soften the situation and calm others."
+            "RESPECTFUL": "We need to keep this respectful and stay within agreed boundaries.",
+            "GOOD MIXER": "Let's find some common ground so everyone can move forward.",
+            "AGGRESSIVE": "I need to state my position clearly and stand my ground.",
+            "GENTLE": "Things are getting tense — we should calm this down first."
         }
     },
     {
@@ -883,10 +883,10 @@ question_contexts = [
     {
         "situation": "You are leading or supporting a group task.",
         "actions": {
-            "CONFIDENT": "I believe in myself and speak up.",
-            "COOPERATIVE": "I ensure everyone works smoothly together.",
-            "ARGUMENTATIVE": "I challenge ideas directly.",
-            "RELAXED": "I stay easy-going throughout."
+            "CONFIDENT": "I speak up, share my views, and trust my judgement.",
+            "COOPERATIVE": "I focus on helping everyone work together smoothly.",
+            "ARGUMENTATIVE": "I challenge ideas directly and push for stronger solutions.",
+            "RELAXED": "I stay easy-going and don't feel the need to control how things unfold."
         }
     },
     {
@@ -899,21 +899,21 @@ question_contexts = [
         }
     },
     {
-        "situation": "Someone shares a personal concern with you.",
+        "situation": "Someone close to you shares that they are uncertain about an important life or career decision and asks for your thoughts.",
         "actions": {
-            "DIPLOMATIC": "I respond carefully and tactfully.",
-            "COURAGEOUS": "I encourage bold action.",
-            "SYMPATHETIC": "I listen with empathy.",
-            "OPTIMISTIC": "I focus on positive outcomes."
+            "DIPLOMATIC": "I need to choose my words carefully — what I say could influence their decision.",
+            "COURAGEOUS": "They shouldn't stay stuck; it may be better to act, even if there's some risk.",
+            "SYMPATHETIC": "Before anything else, I want to understand how this situation is affecting them.",
+            "OPTIMISTIC": "There are still good possibilities ahead, even if the path isn't clear yet."
         }
     },
     {
-        "situation": "You are evaluating someone's performance.",
+        "situation": "You are running a debrief after an activity, project, or event.",
         "actions": {
-            "CHARMING": "I keep feedback friendly and engaging.",
-            "POSITIVE": "I focus on improvement and action.",
-            "LENIENT": "I go easy and understanding.",
-            "EXACTING": "I demand high standards."
+            "CHARMING": "Let's keep people engaged and talking.",
+            "POSITIVE": "What do we do next?",
+            "LENIENT": "Let's protect morale first.",
+            "EXACTING": "This didn't meet the standard."
         }
     },
     {
@@ -928,19 +928,19 @@ question_contexts = [
     {
         "situation": "You are part of a team discussion.",
         "actions": {
-            "HUMBLE": "I don't seek attention.",
-            "GOOD LISTENER": "I focus on listening.",
-            "ENTERTAINING": "I keep the group engaged.",
-            "WILL POWER": "I push toward decisions."
+            "HUMBLE": "I don't need to stand out here.",
+            "GOOD LISTENER": "Let me really hear what everyone is saying.",
+            "ENTERTAINING": "Let's keep this lively and engaging.",
+            "WILL POWER": "We need to move toward a decision."
         }
     },
     {
-        "situation": "You are given instructions to follow.",
+        "situation": "You are taking part in an organised activity with clear expectations (for example, a school task, group event, training session, or volunteer activity).",
         "actions": {
-            "FUN-LOVING": "I keep it enjoyable.",
-            "OBEDIENT": "I follow instructions as given.",
-            "TACTFUL": "I act carefully and respectfully.",
-            "COMPETITIVE": "I want to do better than others."
+            "FUN-LOVING": "Let's make this enjoyable for everyone.",
+            "OBEDIENT": "I'll stick closely to what's expected of me.",
+            "TACTFUL": "I should be careful how my actions affect others.",
+            "COMPETITIVE": "I want to stand out by doing this better."
         }
     },
     {
