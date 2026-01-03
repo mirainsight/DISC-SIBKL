@@ -71,6 +71,12 @@ def append_to_sheet(data):
             data["comp_s"],
             data["comp_c"]
         ]
+        
+        # Add individual question responses (MOST and LEAST for each of 24 questions)
+        for i in range(24):
+            row.append(data.get(f"q{i+1}_most", ""))
+            row.append(data.get(f"q{i+1}_least", ""))
+        
         sheet.append_row(row)
         return True
     except Exception as e:
