@@ -770,6 +770,226 @@ trait_descriptions = {
     "PERFECTIONIST": "I aim for perfection and want things done right"
 }
 
+# Situational contexts for each question with trait-specific actions
+question_contexts = [
+    {
+        "situation": "You are in a group discussion (class, meeting, family planning) where ideas are being shared.",
+        "actions": {
+            "EXPRESSIVE": "I openly share my thoughts and feelings with the group.",
+            "COMPLIANT": "I follow the agreed rules and decisions of the group.",
+            "FORCEFUL": "I take charge and push the discussion forward.",
+            "RESTRAINED": "I stay calm and speak only when necessary."
+        }
+    },
+    {
+        "situation": "Someone challenges your opinion on an issue you care about.",
+        "actions": {
+            "STRONG MINDED": "I stand firm and do not change my view easily.",
+            "CAREFUL": "I think through the issue before responding.",
+            "EMOTIONAL": "I react based on how strongly I feel.",
+            "SATISFIED": "I feel at peace and don't feel the need to argue."
+        }
+    },
+    {
+        "situation": "You are asked to help improve how something is done (school work, office task, event planning).",
+        "actions": {
+            "CORRECT": "I ensure everything is done properly and according to standards.",
+            "PIONEERING": "I suggest a new or different way to do it.",
+            "CALM": "I keep things steady and avoid unnecessary changes.",
+            "INFLUENTIAL": "I persuade others to support my ideas."
+        }
+    },
+    {
+        "situation": "You are working in a team with different personalities.",
+        "actions": {
+            "PRECISE": "I focus on accuracy and details.",
+            "DOMINEERING": "I take control to ensure progress.",
+            "WILLING": "I support others and go along with the plan.",
+            "ATTRACTIVE": "I naturally draw people in and keep the mood positive."
+        }
+    },
+    {
+        "situation": "A deadline is approaching and pressure is increasing.",
+        "actions": {
+            "EVEN-TEMPERED": "I stay balanced and calm.",
+            "STIMULATING": "I energise others to keep spirits up.",
+            "METICULOUS": "I double-check details carefully.",
+            "DETERMINED": "I push hard to get things done."
+        }
+    },
+    {
+        "situation": "You are placed in a situation where expectations are unclear.",
+        "actions": {
+            "TIMID": "I prefer to stay in the background.",
+            "DEMANDING": "I set clear expectations and want results.",
+            "PATIENT": "I wait calmly and observe.",
+            "CAPTIVATING": "I engage others and keep things lively."
+        }
+    },
+    {
+        "situation": "Someone in your group is struggling.",
+        "actions": {
+            "CONSCIENTIOUS": "I ensure things are done properly and responsibly.",
+            "COMPANIONABLE": "I connect with them and offer encouragement.",
+            "KIND": "I show care and understanding.",
+            "SELF-RELIANT": "I believe people should solve problems independently."
+        }
+    },
+    {
+        "situation": "Plans suddenly change at the last minute.",
+        "actions": {
+            "AGREEABLE": "I accept the change without much issue.",
+            "SELF-CONTROLLED": "I remain calm and composed.",
+            "PLAYFUL": "I treat it lightly and make it fun.",
+            "PERSISTENT": "I push to make the original plan work."
+        }
+    },
+    {
+        "situation": "You are in a social gathering or group event.",
+        "actions": {
+            "HIGH-SPIRITED": "I bring energy and take initiative.",
+            "TALKATIVE": "I enjoy chatting and engaging with many people.",
+            "GOOD-NATURED": "I am friendly and easy-going.",
+            "CONSERVATIVE": "I stick to familiar people and routines."
+        }
+    },
+    {
+        "situation": "Things are not going exactly as planned.",
+        "actions": {
+            "CONTENTED": "I stay satisfied and accept the situation.",
+            "IMPATIENT": "I want quick action and change.",
+            "CONVINCING": "I persuade others to try a different approach.",
+            "RESIGNED": "I accept that this is how things are."
+        }
+    },
+    {
+        "situation": "A disagreement arises in a group.",
+        "actions": {
+            "RESPECTFUL": "I maintain respect and follow rules.",
+            "GOOD MIXER": "I bring people together.",
+            "AGGRESSIVE": "I push my point strongly.",
+            "GENTLE": "I soften the situation and calm others."
+        }
+    },
+    {
+        "situation": "You are asked to make a decision with limited information.",
+        "actions": {
+            "POISED": "I stay composed and confident.",
+            "CONVENTIONAL": "I stick to proven methods.",
+            "TAKES RISKS": "I'm willing to try something bold.",
+            "ACCOMMODATING": "I adjust to others' preferences."
+        }
+    },
+    {
+        "situation": "You are leading or supporting a group task.",
+        "actions": {
+            "CONFIDENT": "I believe in myself and speak up.",
+            "COOPERATIVE": "I ensure everyone works smoothly together.",
+            "ARGUMENTATIVE": "I challenge ideas directly.",
+            "RELAXED": "I stay easy-going throughout."
+        }
+    },
+    {
+        "situation": "You are involved in a long-term project.",
+        "actions": {
+            "RESTLESS": "I want movement and progress quickly.",
+            "WELL-DISCIPLINED": "I stick closely to plans and routines.",
+            "INSPIRING": "I motivate others along the way.",
+            "CONSIDERATE": "I look out for others' well-being."
+        }
+    },
+    {
+        "situation": "Someone shares a personal concern with you.",
+        "actions": {
+            "DIPLOMATIC": "I respond carefully and tactfully.",
+            "COURAGEOUS": "I encourage bold action.",
+            "SYMPATHETIC": "I listen with empathy.",
+            "OPTIMISTIC": "I focus on positive outcomes."
+        }
+    },
+    {
+        "situation": "You are evaluating someone's performance.",
+        "actions": {
+            "CHARMING": "I keep feedback friendly and engaging.",
+            "POSITIVE": "I focus on improvement and action.",
+            "LENIENT": "I go easy and understanding.",
+            "EXACTING": "I demand high standards."
+        }
+    },
+    {
+        "situation": "You are offered an opportunity outside your comfort zone.",
+        "actions": {
+            "ADVENTUROUS": "I'm eager to try it.",
+            "ENTHUSIASTIC": "I feel excited and energised.",
+            "GOES-BY-THE-BOOK": "I check rules and procedures first.",
+            "LOYAL": "I consider commitments I already have."
+        }
+    },
+    {
+        "situation": "You are part of a team discussion.",
+        "actions": {
+            "HUMBLE": "I don't seek attention.",
+            "GOOD LISTENER": "I focus on listening.",
+            "ENTERTAINING": "I keep the group engaged.",
+            "WILL POWER": "I push toward decisions."
+        }
+    },
+    {
+        "situation": "You are given instructions to follow.",
+        "actions": {
+            "FUN-LOVING": "I keep it enjoyable.",
+            "OBEDIENT": "I follow instructions as given.",
+            "TACTFUL": "I act carefully and respectfully.",
+            "COMPETITIVE": "I want to do better than others."
+        }
+    },
+    {
+        "situation": "You interact with people in your neighbourhood or community.",
+        "actions": {
+            "CAUTIOUS": "I am careful in my actions.",
+            "NEIGHBORLY": "I am friendly and considerate.",
+            "VIGOROUS": "I take active initiative.",
+            "PERSUASIVE": "I influence and engage others."
+        }
+    },
+    {
+        "situation": "You are asked to share your opinion publicly.",
+        "actions": {
+            "RESERVED": "I prefer to stay quiet.",
+            "OUTSPOKEN": "I speak directly.",
+            "STRICT": "I stick to rules and facts.",
+            "ELOQUENT": "I express myself clearly and confidently."
+        }
+    },
+    {
+        "situation": "A decision needs to be made quickly.",
+        "actions": {
+            "OBLIGING": "I adjust to others.",
+            "ANIMATED": "I bring energy into the moment.",
+            "DECISIVE": "I decide quickly.",
+            "ACCURATE": "I ensure correctness."
+        }
+    },
+    {
+        "situation": "You are working in a team with shared responsibility.",
+        "actions": {
+            "ASSERTIVE": "I take initiative.",
+            "SOCIABLE": "I enjoy teamwork and interaction.",
+            "STEADY": "I provide consistency.",
+            "ORDERLY": "I keep things organised."
+        }
+    },
+    {
+        "situation": "You are given freedom to approach a task your own way.",
+        "actions": {
+            "OUTGOING": "I involve others enthusiastically.",
+            "BOLD": "I take strong action.",
+            "MODERATE": "I keep a balanced approach.",
+            "PERFECTIONIST": "I aim to get everything right."
+        }
+    }
+]
+
 # Each option maps to D, I, S, or C
 questions = [
     {"most": ["EXPRESSIVE", "COMPLIANT", "FORCEFUL", "RESTRAINED"], 
@@ -902,11 +1122,14 @@ with tab1:
     for i, q in enumerate(questions):
         st.markdown(f"### Question {i+1}")
         
+        # Get the context for this question
+        context = question_contexts[i]
+        
         col1, col2 = st.columns(2)
         
         with col1:
             st.markdown("**MOST like you**")
-            # Create formatted options with descriptions
+            # Create formatted options with descriptions (without DISC labels)
             most_options_formatted = [f"{trait} *({trait_descriptions[trait]})*" for trait in q["most"]]
             most_choice_formatted = st.radio(
                 f"Select one:",
@@ -936,6 +1159,15 @@ with tab1:
             if least_choice_formatted:
                 least_choice = least_choice_formatted.split(" *(")[0]
                 st.session_state.least_responses[i] = least_choice
+        
+        # Display situational context with specific actions in a collapsible expander
+        with st.expander("Need help? Example here", expanded=False):
+            st.markdown(f"**Situation:** *{context['situation']}*")
+            st.markdown("")  # Add spacing
+            
+            # Show the contextual actions for each trait option
+            for trait, action in context['actions'].items():
+                st.markdown(f"• **{trait}**: *{action}*")
         
         st.markdown("---")
     
