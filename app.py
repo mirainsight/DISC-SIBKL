@@ -7,7 +7,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import gspread
 from google.oauth2.service_account import Credentials
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -52,7 +52,9 @@ def append_to_sheet(data):
         sheet = get_gsheet()
         if sheet is None:
             return False
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # Get current time in Malaysia Time (MYT, UTC+8)
+        myt = timezone(timedelta(hours=8))
+        timestamp = datetime.now(myt).strftime("%Y-%m-%d %H:%M:%S")
         row = [
             timestamp,
             data["name"],
