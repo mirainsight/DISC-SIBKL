@@ -1144,27 +1144,36 @@ with tab1:
         
         col1, col2 = st.columns(2)
         
+        # Get current saved responses for this question
+        saved_most = st.session_state.most_responses[i]
+        saved_least = st.session_state.least_responses[i]
+        
         with col1:
             st.markdown("**MOST like you**")
-            # Create options without descriptions
+            # Filter out the LEAST choice from MOST options if LEAST was selected
+            available_most = [opt for opt in q["most"] if opt != saved_least] if saved_least else q["most"]
+            # Find the index of the saved choice if it exists
+            most_index = available_most.index(saved_most) if saved_most and saved_most in available_most else None
             most_choice = st.radio(
                 f"Select one:",
-                options=q["most"],
+                options=available_most,
                 key=f"most_{i}",
-                index=None
+                index=most_index
             )
             if most_choice:
                 st.session_state.most_responses[i] = most_choice
         
         with col2:
             st.markdown("**LEAST like you**")
-            # Filter out the MOST choice from LEAST options
-            available_least = [opt for opt in q["least"] if opt != most_choice] if most_choice else q["least"]
+            # Filter out the MOST choice from LEAST options if MOST was selected
+            available_least = [opt for opt in q["least"] if opt != saved_most] if saved_most else q["least"]
+            # Find the index of the saved choice if it exists
+            least_index = available_least.index(saved_least) if saved_least and saved_least in available_least else None
             least_choice = st.radio(
                 f"Select one: ",
                 options=available_least,
                 key=f"least_{i}",
-                index=None
+                index=least_index
             )
             if least_choice:
                 st.session_state.least_responses[i] = least_choice
