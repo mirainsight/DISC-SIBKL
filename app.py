@@ -1125,6 +1125,15 @@ with tab1:
         # Get the context for this question
         context = question_contexts[i]
         
+        # Display situational context with specific actions in a collapsible expander
+        with st.expander("Need help? Example here", expanded=False):
+            st.markdown(f"**Situation:** *{context['situation']}*")
+            st.markdown("")  # Add spacing
+            
+            # Show the contextual actions for each trait option
+            for trait, action in context['actions'].items():
+                st.markdown(f"• **{trait}**: *{action}*")
+        
         col1, col2 = st.columns(2)
         
         with col1:
@@ -1159,15 +1168,6 @@ with tab1:
             if least_choice_formatted:
                 least_choice = least_choice_formatted.split(" *(")[0]
                 st.session_state.least_responses[i] = least_choice
-        
-        # Display situational context with specific actions in a collapsible expander
-        with st.expander("Need help? Example here", expanded=False):
-            st.markdown(f"**Situation:** *{context['situation']}*")
-            st.markdown("")  # Add spacing
-            
-            # Show the contextual actions for each trait option
-            for trait, action in context['actions'].items():
-                st.markdown(f"• **{trait}**: *{action}*")
         
         st.markdown("---")
     
