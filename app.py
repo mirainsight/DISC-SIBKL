@@ -1138,35 +1138,27 @@ with tab1:
         
         with col1:
             st.markdown("**MOST like you**")
-            # Create formatted options with descriptions (without DISC labels)
-            most_options_formatted = [f"{trait} *({trait_descriptions[trait]})*" for trait in q["most"]]
-            most_choice_formatted = st.radio(
+            # Create options without descriptions
+            most_choice = st.radio(
                 f"Select one:",
-                options=most_options_formatted,
+                options=q["most"],
                 key=f"most_{i}",
                 index=None
             )
-            # Extract the trait name (before the parentheses)
-            if most_choice_formatted:
-                most_choice = most_choice_formatted.split(" *(")[0]
+            if most_choice:
                 st.session_state.most_responses[i] = most_choice
-            else:
-                most_choice = None
         
         with col2:
             st.markdown("**LEAST like you**")
             # Filter out the MOST choice from LEAST options
             available_least = [opt for opt in q["least"] if opt != most_choice] if most_choice else q["least"]
-            least_options_formatted = [f"{trait} *({trait_descriptions[trait]})*" for trait in available_least]
-            least_choice_formatted = st.radio(
+            least_choice = st.radio(
                 f"Select one: ",
-                options=least_options_formatted,
+                options=available_least,
                 key=f"least_{i}",
                 index=None
             )
-            # Extract the trait name (before the parentheses)
-            if least_choice_formatted:
-                least_choice = least_choice_formatted.split(" *(")[0]
+            if least_choice:
                 st.session_state.least_responses[i] = least_choice
         
         st.markdown("---")
