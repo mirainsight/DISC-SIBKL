@@ -946,10 +946,10 @@ question_contexts = [
     {
         "situation": "You interact with people in your neighbourhood or community.",
         "actions": {
-            "CAUTIOUS": "I am careful in my actions.",
-            "NEIGHBORLY": "I am friendly and considerate.",
-            "VIGOROUS": "I take active initiative.",
-            "PERSUASIVE": "I influence and engage others."
+            "CAUTIOUS": "I am careful with my words and actions to avoid problems or misunderstandings.",
+            "NEIGHBORLY": "I am warm, friendly, and considerate toward everyone.",
+            "VIGOROUS": "I take initiative and step in to get things moving or settled.",
+            "PERSUASIVE": "I try to influence others and get them to see my point of view."
         }
     },
     {
