@@ -1144,37 +1144,45 @@ with tab1:
         
         col1, col2 = st.columns(2)
         
-        # Get current saved responses for this question
-        saved_most = st.session_state.most_responses[i]
-        saved_least = st.session_state.least_responses[i]
+        # Get current widget values (these update immediately when user clicks)
+        most_widget_key = f"most_{i}"
+        least_widget_key = f"least_{i}"
+        
+        # Get current selections from widget keys or session state
+        current_most = st.session_state.get(most_widget_key) or st.session_state.most_responses[i]
+        current_least = st.session_state.get(least_widget_key) or st.session_state.least_responses[i]
         
         with col1:
             st.markdown("**MOST like you**")
-            # Filter out the LEAST choice from MOST options if LEAST was selected
-            available_most = [opt for opt in q["most"] if opt != saved_least] if saved_least else q["most"]
-            # Find the index of the saved choice if it exists
-            most_index = available_most.index(saved_most) if saved_most and saved_most in available_most else None
+            # Filter out the current LEAST choice from MOST options
+            available_most = [opt for opt in q["most"] if opt != current_least] if current_least else q["most"]
+            # Find the index of the saved choice if it exists in available options
+            most_index = available_most.index(current_most) if current_most and current_most in available_most else None
             most_choice = st.radio(
                 f"Select one:",
                 options=available_most,
-                key=f"most_{i}",
+                key=most_widget_key,
                 index=most_index
             )
+            # Update our tracking array
             if most_choice:
                 st.session_state.most_responses[i] = most_choice
         
         with col2:
             st.markdown("**LEAST like you**")
-            # Filter out the MOST choice from LEAST options if MOST was selected
-            available_least = [opt for opt in q["least"] if opt != saved_most] if saved_most else q["least"]
-            # Find the index of the saved choice if it exists
-            least_index = available_least.index(saved_least) if saved_least and saved_least in available_least else None
+            # Get the updated MOST choice from widget
+            updated_most = st.session_state.get(most_widget_key) or current_most
+            # Filter out the current MOST choice from LEAST options
+            available_least = [opt for opt in q["least"] if opt != updated_most] if updated_most else q["least"]
+            # Find the index of the saved choice if it exists in available options
+            least_index = available_least.index(current_least) if current_least and current_least in available_least else None
             least_choice = st.radio(
                 f"Select one: ",
                 options=available_least,
-                key=f"least_{i}",
+                key=least_widget_key,
                 index=least_index
             )
+            # Update our tracking array
             if least_choice:
                 st.session_state.least_responses[i] = least_choice
         
