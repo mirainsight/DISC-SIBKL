@@ -1126,6 +1126,11 @@ with tab1:
     if 'least_responses' not in st.session_state:
         st.session_state.least_responses = [None] * 24
     
+    # Callback function to update responses
+    def update_response():
+        # Force a recalculation by just existing
+        pass
+    
     # Calculate progress
     completed_questions = sum(1 for i in range(24) 
                             if st.session_state.most_responses[i] is not None 
@@ -1143,6 +1148,55 @@ with tab1:
             st.success("✅ All questions completed!")
         else:
             st.info(f"📝 {24 - completed_questions} questions remaining")
+    
+    # Add fixed progress bar at top using custom CSS
+    st.markdown(
+        f"""
+        <style>
+        .fixed-progress {{
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 999;
+            padding: 1rem;
+            border-bottom: 2px solid #f0f2f6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }}
+        .progress-text {{
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #262730;
+            font-size: 14px;
+        }}
+        .progress-bar-container {{
+            width: 100%;
+            height: 10px;
+            background-color: #f0f2f6;
+            border-radius: 5px;
+            overflow: hidden;
+        }}
+        .progress-bar-fill {{
+            height: 100%;
+            background: linear-gradient(90deg, #1f77b4 0%, #4a9eff 100%);
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }}
+        .spacer {{
+            height: 80px;
+        }}
+        </style>
+        <div class="fixed-progress">
+            <div class="progress-text">📝 Progress: {completed_questions}/24 questions completed ({int(progress_percent * 100)}%)</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width: {progress_percent * 100}%"></div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        """,
+        unsafe_allow_html=True
+    )
     
     # Display all questions
     for i, q in enumerate(questions):
@@ -1180,7 +1234,8 @@ with tab1:
                 f"Select one:",
                 options=available_most,
                 key=most_widget_key,
-                index=most_index
+                index=most_index,
+                on_change=update_response
             )
             # Update our tracking array
             if most_choice:
@@ -1198,7 +1253,8 @@ with tab1:
                 f"Select one: ",
                 options=available_least,
                 key=least_widget_key,
-                index=least_index
+                index=least_index,
+                on_change=update_response
             )
             # Update our tracking array
             if least_choice:
