@@ -1126,6 +1126,24 @@ with tab1:
     if 'least_responses' not in st.session_state:
         st.session_state.least_responses = [None] * 24
     
+    # Calculate progress
+    completed_questions = sum(1 for i in range(24) 
+                            if st.session_state.most_responses[i] is not None 
+                            and st.session_state.least_responses[i] is not None)
+    progress_percent = completed_questions / 24
+    
+    # Display progress bar in sidebar (stays visible while scrolling)
+    with st.sidebar:
+        st.markdown("### 📊 Your Progress")
+        st.markdown(f"**{completed_questions}/24 questions**")
+        st.progress(progress_percent)
+        st.markdown("")
+        
+        if completed_questions == 24:
+            st.success("✅ All questions completed!")
+        else:
+            st.info(f"📝 {24 - completed_questions} questions remaining")
+    
     # Display all questions
     for i, q in enumerate(questions):
         st.markdown(f"### Question {i+1}")
