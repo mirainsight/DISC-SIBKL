@@ -1147,18 +1147,6 @@ with tab1:
                             and st.session_state.least_responses[i] is not None)
     progress_percent = completed_questions / 24
     
-    # Display progress bar in sidebar (stays visible while scrolling)
-    with st.sidebar:
-        st.markdown("### 📊 Your Progress")
-        st.markdown(f"**{completed_questions}/24 questions**")
-        st.progress(progress_percent)
-        st.markdown("")
-        
-        if completed_questions == 24:
-            st.success("✅ All questions completed!")
-        else:
-            st.info(f"📝 {24 - completed_questions} questions remaining")
-    
     # Add fixed progress bar at top using custom CSS
     st.markdown(
         f"""
