@@ -1126,10 +1126,20 @@ with tab1:
     if 'least_responses' not in st.session_state:
         st.session_state.least_responses = [None] * 24
     
-    # Callback function to update responses
-    def update_response():
-        # Force a recalculation by just existing
-        pass
+    # Callback function to update responses immediately
+    def update_most_response(question_idx):
+        def callback():
+            widget_key = f"most_{question_idx}"
+            if widget_key in st.session_state:
+                st.session_state.most_responses[question_idx] = st.session_state[widget_key]
+        return callback
+    
+    def update_least_response(question_idx):
+        def callback():
+            widget_key = f"least_{question_idx}"
+            if widget_key in st.session_state:
+                st.session_state.least_responses[question_idx] = st.session_state[widget_key]
+        return callback
     
     # Calculate progress
     completed_questions = sum(1 for i in range(24) 
@@ -1235,7 +1245,7 @@ with tab1:
                 options=available_most,
                 key=most_widget_key,
                 index=most_index,
-                on_change=update_response
+                on_change=update_most_response(i)
             )
             # Update our tracking array
             if most_choice:
@@ -1254,7 +1264,7 @@ with tab1:
                 options=available_least,
                 key=least_widget_key,
                 index=least_index,
-                on_change=update_response
+                on_change=update_least_response(i)
             )
             # Update our tracking array
             if least_choice:
